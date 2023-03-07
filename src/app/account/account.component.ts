@@ -6,13 +6,15 @@ import { LoggingService } from '../logging.service';
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
-  providers: [LoggingService, AccountsService]
+  providers: [LoggingService]
 })
 export class AccountComponent {
   @Input() account: {name: string, status: string};
   @Input() id: number;
   // @Output() statusChanged = new EventEmitter<{id: number, newStatus: string}>();
 
+  // we overrode the instances we got from app component,
+  // solution: just remove it from providers array
   constructor(private loggingService: LoggingService,
     private accountService: AccountsService) {
   }
