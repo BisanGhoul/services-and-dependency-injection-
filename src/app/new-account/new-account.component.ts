@@ -6,7 +6,7 @@ import { LoggingService } from '../logging.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService]
+  // providers: [LoggingService]
 })
 export class NewAccountComponent {
   // @Output() accountAdded = new EventEmitter<{name: string, status: string}>();
@@ -14,7 +14,11 @@ export class NewAccountComponent {
   // we overrode the instances we got from app component
     // solution: just remove it from providers array
   constructor(private loggingService: LoggingService,
-    private accountService: AccountsService) { }
+    private accountService: AccountsService) {
+      this.accountService.statusUpdated.subscribe(
+        (status: string) => alert('new status: '+status)
+      );
+     }
 
   onCreateAccount(accountName: string, accountStatus: string) {
     // this.accountAdded.emit({
