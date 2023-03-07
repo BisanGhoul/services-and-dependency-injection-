@@ -22,7 +22,7 @@ export class NewAccountComponent {
     //   status: accountStatus
     // });
     this.accountService.addAccount(accountName, accountStatus);
-    this.loggingService.logStatusChange(accountStatus);
+    // this.loggingService.logStatusChange(accountStatus);
 
     //this will work, but this is not how to use services in angular
     // const service = new LoggingService();

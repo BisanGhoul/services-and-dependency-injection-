@@ -5,7 +5,7 @@ import { AccountsService } from './accounts.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [AccountsService]
+  // providers: [AccountsService]
 })
 export class AppComponent implements OnInit {
   //we loop through the accounts in app.component.html file, so we still need them here

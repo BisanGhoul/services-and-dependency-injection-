@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
+import { AccountsService } from './accounts.service';
+import { LoggingService } from './logging.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { NewAccountComponent } from './new-account/new-account.component';
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AccountsService, LoggingService], //everything in our application rcieves the same instance 
+                                //of the service, unless we override it.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
